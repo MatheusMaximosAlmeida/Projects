@@ -21,5 +21,6 @@ function verificarCampos(campoNumero1, campoNumero2){
 
 function converterParaInteiro(valorConverter1, valorConverter2){
     var resultado = parseInt(valorConverter1) * parseInt(valorConverter2);
+    var h1 =document.getElementById("h1Resultado").innerText = resultado;
     window.alert(resultado);
 }
