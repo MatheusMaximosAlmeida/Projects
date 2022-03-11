@@ -1,2 +1,10 @@
 c:\users\aluno\2J\TB\JogoDaForca\prjJogoDaForca\bin\Debug\prjJogoDaForca.exe.config
 C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\bin\Debug\prjJogoDaForca.exe.config
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\bin\Debug\prjJogoDaForca.exe
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\bin\Debug\prjJogoDaForca.pdb
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.csprojResolveAssemblyReference.cache
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.Form1.resources
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.Properties.Resources.resources
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.csproj.GenerateResource.Cache
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.exe
+C:\Users\Aluno\Documents\GitHub\Projects\prjC#\2J\TB\JogoDaForca\prjJogoDaForca\obj\Debug\prjJogoDaForca.pdb
