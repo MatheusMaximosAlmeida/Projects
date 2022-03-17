@@ -86,6 +86,7 @@
             // 
             // pnPalavra
             // 
+            this.pnPalavra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnPalavra.Location = new System.Drawing.Point(251, 38);
             this.pnPalavra.Name = "pnPalavra";
             this.pnPalavra.Size = new System.Drawing.Size(573, 173);
