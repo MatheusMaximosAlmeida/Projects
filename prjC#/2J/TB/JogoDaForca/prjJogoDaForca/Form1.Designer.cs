@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnJogar = new System.Windows.Forms.Button();
             this.txtLetra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnPalavra = new System.Windows.Forms.Panel();
+            this.pbForca = new System.Windows.Forms.PictureBox();
+            this.pbBoneco = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbForca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBoneco)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnJogar);
             this.panel1.Controls.Add(this.txtLetra);
             this.panel1.Controls.Add(this.label1);
@@ -48,7 +54,7 @@
             // 
             // btnJogar
             // 
-            this.btnJogar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnJogar.BackColor = System.Drawing.Color.Transparent;
             this.btnJogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJogar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJogar.ForeColor = System.Drawing.Color.White;
@@ -58,6 +64,7 @@
             this.btnJogar.TabIndex = 2;
             this.btnJogar.Text = "JOGAR";
             this.btnJogar.UseVisualStyleBackColor = false;
+            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
             // 
             // txtLetra
             // 
@@ -86,17 +93,40 @@
             // 
             // pnPalavra
             // 
-            this.pnPalavra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnPalavra.BackColor = System.Drawing.Color.Transparent;
             this.pnPalavra.Location = new System.Drawing.Point(251, 38);
             this.pnPalavra.Name = "pnPalavra";
             this.pnPalavra.Size = new System.Drawing.Size(573, 173);
             this.pnPalavra.TabIndex = 1;
             // 
+            // pbForca
+            // 
+            this.pbForca.BackColor = System.Drawing.Color.Transparent;
+            this.pbForca.Image = ((System.Drawing.Image)(resources.GetObject("pbForca.Image")));
+            this.pbForca.Location = new System.Drawing.Point(36, 247);
+            this.pbForca.Name = "pbForca";
+            this.pbForca.Size = new System.Drawing.Size(238, 310);
+            this.pbForca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbForca.TabIndex = 2;
+            this.pbForca.TabStop = false;
+            // 
+            // pbBoneco
+            // 
+            this.pbBoneco.BackColor = System.Drawing.Color.Transparent;
+            this.pbBoneco.Location = new System.Drawing.Point(152, 288);
+            this.pbBoneco.Name = "pbBoneco";
+            this.pbBoneco.Size = new System.Drawing.Size(194, 317);
+            this.pbBoneco.TabIndex = 3;
+            this.pbBoneco.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 250);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(847, 666);
+            this.Controls.Add(this.pbBoneco);
+            this.Controls.Add(this.pbForca);
             this.Controls.Add(this.pnPalavra);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -109,7 +139,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbForca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBoneco)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,6 +153,8 @@
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.TextBox txtLetra;
         private System.Windows.Forms.Panel pnPalavra;
+        private System.Windows.Forms.PictureBox pbForca;
+        private System.Windows.Forms.PictureBox pbBoneco;
     }
 }
 
