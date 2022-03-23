@@ -15,9 +15,9 @@ export class HomePage {
 
   calcularTotal() {
     this.resultado = this.qtdHotdog * 5;
-    this.resultado = this.qtdRefrigerante * 3.5;
-    this.resultado = this.qtdBala * 0.25;
-    this.resultado = this.qtdChocolate * 2;
+    this.resultado += this.qtdRefrigerante * 3.5;
+    this.resultado += this.qtdBala * 0.25;
+    this.resultado += this.qtdChocolate * 2;
   }
 
 
