@@ -88,6 +88,13 @@ namespace prjJogoDaForca
          {
              string p = jogo.DevolverPalavra();
              bool achei = false;
+             if (lbLetras.Text.Contains(letra))
+             {
+                 MessageBox.Show("Letra já digitada");
+                 return;
+             }
+             lbLetras.Text += letra + "  ";
+
              for (int i = 0; i < p.Length; i++)
              {
                  if (p.Substring(i, 1).Equals(letra))
@@ -101,10 +108,49 @@ namespace prjJogoDaForca
              {
                  Erro++;
                  DesenharBoneco();
-
-
+             }
+             
+             if (Erro == 6)
+             {
+                 Derrota();
              }
 
+             vitoria();
+
+         }
+
+         private void vitoria()
+         {
+             string p = jogo.DevolverPalavra();
+             string tmp = "";
+             foreach (Label letra in Letras)
+             {
+                 tmp += letra.Text;
+             }
+             if (p.Equals(tmp))
+             {
+                 MessageBox.Show("Voce é uma LENDA!!!");
+                 NovoJogo();
+             }
+         }
+
+        //Código onde diz que você perdeu.
+
+         private void Derrota()
+         {
+             MessageBox.Show("Você perdeu. A palavra era " + jogo.DevolverPalavra());
+             NovoJogo();
+         }
+
+        //Código onde o Jogo reinicia.
+
+         private void NovoJogo()
+         {
+             Erro = 0;
+             pnPalavra.Controls.Clear();
+             pbBoneco.Image = null;
+             jogo.Sortear();
+             DesenharPalavra(jogo.DevolverPalavra());
          }
 
          private void DesenharBoneco()
@@ -115,5 +161,8 @@ namespace prjJogoDaForca
              pbBoneco.Image = Image.FromFile(arquivo);
 
          }
+
+         
+         
     }
 }
