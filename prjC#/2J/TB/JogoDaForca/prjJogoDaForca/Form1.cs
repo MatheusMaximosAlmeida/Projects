@@ -58,7 +58,7 @@ namespace prjJogoDaForca
             for (int i = 0; i < qtd; i++)
             {
                 Letras[i] = new Label();
-                Letras[i].Text = "🎃";
+                Letras[i].Text = "?";
                 Letras[i].AutoSize = false;
                 Letras[i].Width = 30;
                 Letras[i].Height = 30;
@@ -66,7 +66,7 @@ namespace prjJogoDaForca
                 Letras[i].ForeColor = Color.Black;
                 Letras[i].BackColor = Color.White;
                 Letras[i].TextAlign = ContentAlignment.MiddleCenter;
-                if (i % 10 == 0 && i != 0)
+                if (i % 15 == 0 && i != 0)
                 {
                     cy += 35;
                     cx = 10;

@@ -35,20 +35,15 @@
             this.txtLetra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnPalavra = new System.Windows.Forms.Panel();
+            this.lbCronometro = new System.Windows.Forms.Label();
             this.pbForca = new System.Windows.Forms.PictureBox();
             this.pbBoneco = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbLetras = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbCronometro = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.pnPalavra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbForca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoneco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,7 +85,8 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -104,17 +100,30 @@
             // pnPalavra
             // 
             this.pnPalavra.BackColor = System.Drawing.Color.Transparent;
+            this.pnPalavra.Controls.Add(this.lbCronometro);
             this.pnPalavra.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnPalavra.Location = new System.Drawing.Point(251, 38);
             this.pnPalavra.Name = "pnPalavra";
-            this.pnPalavra.Size = new System.Drawing.Size(363, 173);
+            this.pnPalavra.Size = new System.Drawing.Size(724, 173);
             this.pnPalavra.TabIndex = 1;
+            // 
+            // lbCronometro
+            // 
+            this.lbCronometro.BackColor = System.Drawing.Color.Transparent;
+            this.lbCronometro.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCronometro.ForeColor = System.Drawing.Color.White;
+            this.lbCronometro.Location = new System.Drawing.Point(664, 0);
+            this.lbCronometro.Name = "lbCronometro";
+            this.lbCronometro.Size = new System.Drawing.Size(60, 50);
+            this.lbCronometro.TabIndex = 15;
+            this.lbCronometro.Text = "120";
+            this.lbCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbForca
             // 
             this.pbForca.BackColor = System.Drawing.Color.Transparent;
             this.pbForca.Image = ((System.Drawing.Image)(resources.GetObject("pbForca.Image")));
-            this.pbForca.Location = new System.Drawing.Point(36, 247);
+            this.pbForca.Location = new System.Drawing.Point(39, 278);
             this.pbForca.Name = "pbForca";
             this.pbForca.Size = new System.Drawing.Size(238, 310);
             this.pbForca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -124,33 +133,11 @@
             // pbBoneco
             // 
             this.pbBoneco.BackColor = System.Drawing.Color.Transparent;
-            this.pbBoneco.Location = new System.Drawing.Point(152, 288);
+            this.pbBoneco.Location = new System.Drawing.Point(170, 336);
             this.pbBoneco.Name = "pbBoneco";
             this.pbBoneco.Size = new System.Drawing.Size(194, 317);
             this.pbBoneco.TabIndex = 3;
             this.pbBoneco.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(451, 305);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(148, 129);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(399, 452);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(115, 77);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 11;
-            this.pictureBox8.TabStop = false;
             // 
             // lbLetras
             // 
@@ -158,35 +145,12 @@
             this.lbLetras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbLetras.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLetras.ForeColor = System.Drawing.Color.White;
-            this.lbLetras.Location = new System.Drawing.Point(0, 630);
+            this.lbLetras.Location = new System.Drawing.Point(0, 665);
             this.lbLetras.Name = "lbLetras";
             this.lbLetras.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lbLetras.Size = new System.Drawing.Size(626, 36);
+            this.lbLetras.Size = new System.Drawing.Size(1231, 36);
             this.lbLetras.TabIndex = 13;
             this.lbLetras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(451, 535);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbCronometro
-            // 
-            this.lbCronometro.BackColor = System.Drawing.Color.Transparent;
-            this.lbCronometro.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCronometro.ForeColor = System.Drawing.Color.White;
-            this.lbCronometro.Location = new System.Drawing.Point(554, 214);
-            this.lbCronometro.Name = "lbCronometro";
-            this.lbCronometro.Size = new System.Drawing.Size(60, 50);
-            this.lbCronometro.TabIndex = 15;
-            this.lbCronometro.Text = "120";
-            this.lbCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -199,12 +163,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(626, 666);
-            this.Controls.Add(this.lbCronometro);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1231, 701);
             this.Controls.Add(this.lbLetras);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pbBoneco);
             this.Controls.Add(this.pbForca);
             this.Controls.Add(this.pnPalavra);
@@ -219,11 +179,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnPalavra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbForca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoneco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,10 +196,7 @@
         private System.Windows.Forms.Panel pnPalavra;
         private System.Windows.Forms.PictureBox pbForca;
         private System.Windows.Forms.PictureBox pbBoneco;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lbLetras;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbCronometro;
         private System.Windows.Forms.Timer timer1;
     }
