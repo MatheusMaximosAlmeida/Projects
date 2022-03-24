@@ -78,28 +78,25 @@
     </div>
   </div><br>
 
-<div class="container justify-content-center">
-  <div class="row">
-  <div class="form-floating col-6">
-    <input id="troco" type="text" class="form-control" placeholder="Com quantos vai pagar">
-    <label for="troco" class="from-label">Valor da nota</label>
-  </div>
-
-  <div class="form-floating col-6">
-    <input id="troco" type="text" class="form-control" placeholder="Com quantos vai pagar">
-    <label for="troco" class="from-label">troco</label>
-  </div>
-</div>
-</div>
-
-  <div class="text-center display-5 fw-bold mt-5">
-    R$ {{resultado}}
+  <div class="container justify-content-center">
+    <div class="form-floating col-12">
+      <input id="troco" type="text" class="form-control" placeholder="Com quantos vai pagar">
+      <label for="troco" class="from-label">Valor da nota</label>
+    </div><br>
+    <label for="troco" class="form-label">Seu troco será</label>
+    <div class="col-12">
+      <input id="troco" class="form-control" type="text">
+    </div>
   </div><br>
-
   <div class="container  d-flex justify-content-center">
     <div class="">
-      <button class="btn btn-primary" (click)="addChocolate()">Calcular troco</button>
+      <button class="btn btn-primary">Calcular troco</button>
     </div>
   </div>
+  <div class="text-center display-5 fw-bold mt-3">
+    R$ {{resultado}}
+  </div>
+
+
 
 </div>
