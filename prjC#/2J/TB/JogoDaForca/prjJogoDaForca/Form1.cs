@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,12 +35,16 @@ namespace prjJogoDaForca
         Label[] Letras;
         
         int Erro = 0;
+        SoundPlayer som;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             jogo  = new Forca(lista);
             jogo.Sortear();
             DesenharPalavra(jogo.DevolverPalavra());
+            som = new SoundPlayer();
+            som.SoundLocation = Environment.CurrentDirectory + "\\fundo.wav";
+            som.PlayLooping();
         }
 
         //Box para as letras.
@@ -112,7 +117,10 @@ namespace prjJogoDaForca
              
              if (Erro == 6)
              {
+                 timer1.Stop();
                  Derrota();
+                 lbCronometro.Text = "120";
+                 timer1.Start();
              }
 
              vitoria();
@@ -131,6 +139,8 @@ namespace prjJogoDaForca
              {
                  MessageBox.Show("Voce é uma LENDA!!!");
                  NovoJogo();
+                 lbCronometro.Text = "120";
+                 timer1.Start();
              }
          }
 
@@ -167,6 +177,20 @@ namespace prjJogoDaForca
              int seg = Int16.Parse(lbCronometro.Text);
              seg--;
              lbCronometro.Text = seg.ToString();
+             if (seg <= 15)
+             {
+                 Console.Beep();
+                 lbCronometro.ForeColor = Color.Red;
+             }
+             if (seg <= 0)
+             {
+                 timer1.Stop();
+                 Derrota();
+                 lbCronometro.Text = "120";
+                 lbCronometro.ForeColor = Color.Gold;
+                 timer1.Start();
+
+             }
          }
     }
 }
