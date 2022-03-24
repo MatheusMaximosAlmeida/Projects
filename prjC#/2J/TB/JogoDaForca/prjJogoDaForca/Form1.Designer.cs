@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnJogar = new System.Windows.Forms.Button();
@@ -40,6 +41,8 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbLetras = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbCronometro = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbForca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoneco)).BeginInit();
@@ -101,9 +104,10 @@
             // pnPalavra
             // 
             this.pnPalavra.BackColor = System.Drawing.Color.Transparent;
+            this.pnPalavra.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnPalavra.Location = new System.Drawing.Point(251, 38);
             this.pnPalavra.Name = "pnPalavra";
-            this.pnPalavra.Size = new System.Drawing.Size(573, 173);
+            this.pnPalavra.Size = new System.Drawing.Size(363, 173);
             this.pnPalavra.TabIndex = 1;
             // 
             // pbForca
@@ -130,9 +134,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(873, 29);
+            this.pictureBox3.Location = new System.Drawing.Point(451, 305);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(212, 182);
+            this.pictureBox3.Size = new System.Drawing.Size(148, 129);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -141,7 +145,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(602, 454);
+            this.pictureBox8.Location = new System.Drawing.Point(399, 452);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(115, 77);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +161,7 @@
             this.lbLetras.Location = new System.Drawing.Point(0, 630);
             this.lbLetras.Name = "lbLetras";
             this.lbLetras.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lbLetras.Size = new System.Drawing.Size(1121, 36);
+            this.lbLetras.Size = new System.Drawing.Size(626, 36);
             this.lbLetras.TabIndex = 13;
             this.lbLetras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -165,19 +169,38 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(733, 528);
+            this.pictureBox1.Location = new System.Drawing.Point(451, 535);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(143, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // lbCronometro
+            // 
+            this.lbCronometro.BackColor = System.Drawing.Color.Transparent;
+            this.lbCronometro.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCronometro.ForeColor = System.Drawing.Color.White;
+            this.lbCronometro.Location = new System.Drawing.Point(554, 214);
+            this.lbCronometro.Name = "lbCronometro";
+            this.lbCronometro.Size = new System.Drawing.Size(60, 50);
+            this.lbCronometro.TabIndex = 15;
+            this.lbCronometro.Text = "120";
+            this.lbCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1121, 666);
+            this.ClientSize = new System.Drawing.Size(626, 666);
+            this.Controls.Add(this.lbCronometro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbLetras);
             this.Controls.Add(this.pictureBox8);
@@ -219,6 +242,8 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lbLetras;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbCronometro;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
