@@ -40,6 +40,7 @@
             this.pbBoneco = new System.Windows.Forms.PictureBox();
             this.lbLetras = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbDica = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnPalavra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbForca)).BeginInit();
@@ -158,12 +159,25 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbDica
+            // 
+            this.lbDica.BackColor = System.Drawing.Color.Transparent;
+            this.lbDica.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDica.ForeColor = System.Drawing.Color.White;
+            this.lbDica.Location = new System.Drawing.Point(248, 214);
+            this.lbDica.Name = "lbDica";
+            this.lbDica.Size = new System.Drawing.Size(727, 23);
+            this.lbDica.TabIndex = 14;
+            this.lbDica.Text = "DICA:";
+            this.lbDica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1231, 701);
+            this.Controls.Add(this.lbDica);
             this.Controls.Add(this.lbLetras);
             this.Controls.Add(this.pbBoneco);
             this.Controls.Add(this.pbForca);
@@ -199,6 +213,7 @@
         private System.Windows.Forms.Label lbLetras;
         private System.Windows.Forms.Label lbCronometro;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbDica;
     }
 }
 

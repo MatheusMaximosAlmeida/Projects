@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -20,14 +21,9 @@ namespace prjJogoDaForca
 
         //Lista de palavras para sorteio no jogo da Forca.
 
-        List<string> lista = new List<string>()
-        {
-            "SANTOS","FREEFIRE","HEXALAB","DESIGNER","DIARIO","GAGO",
-            "MATHEUS","KAH","SAO PAULO","MAXIMOS","DEVELOPER","BACKEND",
-            "FRONTEND","COLEGIO","HERCULES","ANHANGUERA","AMAZONCRIPZ","COLMEIA",
-            "JOGADOR","MUNDIAL","RUSSIA","UCRANIA","COVID","BONDINHO","DATENA","PERCIVAL",
-            "BOLSOMINION","LULA","MINHA VUAIDA"
-        };
+        List<string> lista = new List<string>();
+        List<string> dicas = new List<string>();
+        
 
         //Inicio do codiogo para o Jogo.
 
@@ -39,12 +35,29 @@ namespace prjJogoDaForca
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CarreagrLista();
             jogo  = new Forca(lista);
             jogo.Sortear();
             DesenharPalavra(jogo.DevolverPalavra());
             som = new SoundPlayer();
             som.SoundLocation = Environment.CurrentDirectory + "\\fundo.wav";
             som.PlayLooping();
+            lbDica.Text = "DICA:" + dicas[jogo.Pos];
+        }
+
+        private void CarreagrLista()
+        {
+            string file = Environment.CurrentDirectory + "\\lista.txt";
+            StreamReader st = new StreamReader(file, Encoding.UTF8);
+            int qtd = File.ReadAllLines(file).Count();
+            for (int i = 0; i < qtd; i++)
+            {
+                string linha = st.ReadLine();
+                string[] campo = linha.Split(',');
+                lista.Add(campo[0]);
+                dicas.Add(campo[1]);
+            }
+            st.Close();
         }
 
         //Box para as letras.
@@ -141,6 +154,7 @@ namespace prjJogoDaForca
                  NovoJogo();
                  lbCronometro.Text = "120";
                  timer1.Start();
+                 NovoJogo();
              }
          }
 
@@ -161,6 +175,8 @@ namespace prjJogoDaForca
              pbBoneco.Image = null;
              jogo.Sortear();
              DesenharPalavra(jogo.DevolverPalavra());
+             lbLetras.Text = "";
+             lbDica.Text = "DICA:" + dicas[jogo.Pos];
          }
 
          private void DesenharBoneco()
@@ -192,5 +208,7 @@ namespace prjJogoDaForca
 
              }
          }
+
+
     }
 }
