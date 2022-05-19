@@ -1,17 +1,20 @@
-
-<div class="d-flex flex-column text-center mx-4">
-
-  <button type="button" class="btn-close my-4" aria-label="Close"></button>
-
-  <label for="cigarro" class="my-4">Quantidade de cigarros por dia:</label>
-  <input type="number" placeholder="Ex: 2" id="cigarro" [(ngModel)]="quantidadeCigarro">
-  
-  <label for="ano" class="my-4">Quantidade de anos fumando:</label>
-  <input type="number" placeholder="Ex: 2" id="ano" [(ngModel)]="quantidadeAnoFumando">
-  
-  <button class="btn btn-primary mt-4" (click)="calcularTempoVidaPerdida()"> Calcular</button>
-  
-  <h4>Tempo de vida perdido</h4>
-
-  <h2>{{tempoVidaPerdido}} Dia(s)</h2>
-</div>
+<ion-content>
+  <div *ngFor="let cat of dados">
+    <div class="categoria">
+      <img src="{{cat.foto}}" alt="">
+      <h2>{{cat.nome}}</h2>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let prod of cat.produtos" routerLink="/detalhe">
+        <ion-avatar slot="start">
+          <img src="{{prod.foto || 'https://via.placeholder.com/150'}}" alt="">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ prod.nome  }}</h2>
+          <p>{{ prod.descricao  }}</p>
+          <p>{{ prod.valor | currency : 'BRL'  }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

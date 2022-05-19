@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Categoria } from '../interface/categoria';
+import { Produto } from '../interface/produto';
 
 @Component({
   selector: 'app-home',
@@ -6,20 +9,24 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  quantidadeCigarro: number = null;
-  quantidadeAnoFumando: number = null;
-  tempoVidaPerdido: number = 0;
+  URL_BASE = 'http://lucasreno.kinghost.net/delivery';
+  dados: Categoria[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.pegarDados();
+  }
 
-  calcularTempoVidaPerdida(){
-    let totalDiasPorAno = 360;
-    const minutosPerdidoPorCigarro = 10;
-    const totalMinutosPorDia = 1440;
-    let totalDiasFumando = this.quantidadeAnoFumando * 360;
-    let totalCigarroFumado = totalDiasFumando * this.quantidadeCigarro;
-    this.tempoVidaPerdido = totalCigarroFumado *minutosPerdidoPorCigarro;
-    this.tempoVidaPerdido = this.tempoVidaPerdido / totalMinutosPorDia;
-
+  pegarDados() {
+    this.http.get<Categoria[]>(this.URL_BASE+'/categorias').subscribe(
+      resposta => {
+        this.dados = resposta;
+        this.dados.forEach(dado =>{
+          this.http.get<Produto[]>(this.URL_BASE + '/produtos/' + dado.idCategoria).subscribe(resp => {
+            dado.produtos = resp;
+          });
+          
+        })
+      }
+    );
   }
 }
