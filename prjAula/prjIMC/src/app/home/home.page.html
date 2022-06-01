@@ -1,0 +1,38 @@
+<div class="container ">
+  <div class="row align-items-cente rounded-bottom" style="background-color: #5DA9E9;">
+    <div class="col">
+      <h1 class="text-start  text-light fs-4 ms-3 ">Calculadora IMC</h1>
+    </div>
+  </div>
+  <div class="row align-items-cente">
+    <div class="col">
+      <p class="text-start fs-6 ms-3 mt-4 ">Insira seu peso e altura abaixo e diremos se você está acima ou abaixo de
+        seu peso ideal.</p>
+    </div>
+  </div>
+
+  <div class="row align-items-center ms-1 me-1 mt-4">
+    <div class="col">
+      <label for="peso" class="form-label">Peso</label>
+      <input type="number" class="form-control" name="peso" [(ngModel)]="peso">
+    </div>
+  </div>
+
+  <div class="row align-items-center ms-1 me-1 mt-3">
+    <div class="col">
+      <label for="altura" class="form-label">Altura</label>
+      <input type="number" class="form-control" name="altura" [(ngModel)]="altura">
+    </div>
+  </div>
+
+  <div class="d-grid gap-2 ms-3 me-3 mt-4">
+    <button type="button" class="btn btn-primary border-0 " (click)="calcularIMC()"
+      style="background-color: #5DA9E9;">Calcular</button>
+  </div>
+
+  <div class="text-center mt-5">Resposta</div>
+
+  <div class="mt-3 fw-bold text-start ms-3 me-3 ">{{classificacao}}</div>
+
+
+</div>
